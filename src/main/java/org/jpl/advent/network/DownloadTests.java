@@ -27,7 +27,7 @@ public class DownloadTests {
   }
 
   public static void main(String[] args) {
-    new DownloadTests().retrieveTests("2", "2023");
+    new DownloadTests().retrieveTests("1", "2023");
   }
 
   public void retrieveTests(String day, String year) {
@@ -45,13 +45,12 @@ public class DownloadTests {
             
             @Test
             void testPart1() {
-                assertEquals("%s", day.part1().toString());
-                
+                assertEquals("%s", day.setExample(1).part1().toString());
             }
             
             @Test
             void testPart2() {
-                assertEquals("%s", day.part2().toString());
+                assertEquals("%s", day.setExample(2).part2().toString());
             }
         }
         """.formatted(y, day, day, day, !matches.isEmpty() ? matches.get(0) : "true", matches.size() > 1 ? matches.get(1) : "true"));

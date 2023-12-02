@@ -1,6 +1,7 @@
 package org.jpl.advent.common;
 
 import org.jpl.advent.network.FetchInput;
+import org.jpl.advent.network.Submit;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,16 +70,14 @@ public abstract class Day {
   public void submitPart1() {
     if (solutionPart1 == null) solutionPart1 = part1();
     if (example == 0 && solutionPart1 != null) {
-      // TODO
-      // new Submit().submit(solutionPart1, year, day, 1);
+      new Submit().submit(solutionPart1, year, day, 1);
     }
   }
 
   public void submitPart2() {
     if (solutionPart2 == null) solutionPart2 = part1();
     if (example == 0 && solutionPart2 != null) {
-      // TODO
-      // new Submit().submit(solutionPart2, year, day, 2);
+      new Submit().submit(solutionPart2, year, day, 2);
     }
   }
 
