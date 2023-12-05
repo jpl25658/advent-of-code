@@ -10,10 +10,11 @@ public class Parser {
   }
 
   public static Mapper parseMapper(String input) {
-    String[] parts = input.split("\n");
-    String[] headerParts = parts[0].split(" ")[0].split("-to-");
-    List<Mapping> mappings = Arrays.stream(parts).skip(1).map(Parser::parseMapping).toList();
-    return Mapper.builder().source(headerParts[0]).destination(headerParts[1]).mappings(mappings).build();
+    List<String> parts = new java.util.ArrayList<>(Arrays.stream(input.split("\n")).toList());
+    String[] header = parts.get(0).split(" ")[0].split("-to-");
+    parts.remove(0);
+    List<Mapping> mappings = parts.stream().map(Parser::parseMapping).toList();
+    return Mapper.builder().source(header[0]).destination(header[1]).mappings(mappings).build();
   }
 
   private static Mapping parseMapping(String input) {
