@@ -1,6 +1,5 @@
 package org.jpl.advent.year23.days;
 
-import org.jpl.advent.year23.days.day5.Day5;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
