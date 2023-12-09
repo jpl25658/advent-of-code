@@ -13,6 +13,6 @@ class Day9Test {
 
     @Test
     void testPart2() {
-        assertEquals("5 ", day.setExample(2).part2().toString());
+        assertEquals("5", day.setExample(2).part2().toString());
     }
 }
