@@ -15,3 +15,4 @@ Java solutions for [Advent of Code 2023](https://adventofcode.com/2023).
 - [Day7](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day7.java) ⭐⭐ Camel Cards
 - [Day8](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day8.java) ⭐⭐ Haunted Wasteland
 - [Day9](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day9.java) ⭐⭐ Mirage Maintenance
+- [Day10](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day10.java) ⭐⭐ Pipe Maze
