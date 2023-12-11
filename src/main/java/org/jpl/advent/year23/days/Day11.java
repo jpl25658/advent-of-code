@@ -55,10 +55,10 @@ public class Day11 extends Day2023 {
 
   private long getPart2Factor() {
     return  testFactor != 0 ? testFactor : 1_000_000;
-
   }
 
   private void readUniverse(List<String> input) {
+
     galaxies = new ArrayList<>();
     String[][] data = input.stream().map(line -> line.split("")).toArray(String[][]::new);
     for (int row = 0; row < data.length; row++) {
@@ -68,11 +68,13 @@ public class Day11 extends Day2023 {
         }
       }
     }
+
     emptyRows = LongStream.range(0, input.size())
         .filter(row -> galaxies.stream().noneMatch(g -> g.row == row))
         .boxed()
         .sorted(Comparator.reverseOrder())
         .toList();
+
     emptyCols = LongStream.range(0, input.get(0).length())
         .filter(col -> galaxies.stream().noneMatch(g -> g.col == col))
         .boxed()
@@ -82,8 +84,8 @@ public class Day11 extends Day2023 {
   private List<Galaxy> expandUniverse(long factor) {
     return galaxies.stream()
         .map(g -> new Galaxy(
-      g.row() + (factor - 1) * emptyRows.stream().filter(n -> n < g.row()).count(),
-      g.col() + (factor - 1) * emptyCols.stream().filter(n -> n < g.col()).count()
+            g.row() + (factor - 1) * emptyRows.stream().filter(n -> n < g.row()).count(),
+            g.col() + (factor - 1) * emptyCols.stream().filter(n -> n < g.col()).count()
         ))
         .toList();
   }
