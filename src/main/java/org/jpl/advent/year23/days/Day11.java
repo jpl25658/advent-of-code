@@ -40,6 +40,7 @@ public class Day11 extends Day2023 {
         .mapToLong(pair -> pair.getLeft().distance(pair.getRight()))
         .sum();
   }
+
   @Override
   public Object part2() {
     readUniverse(dayStream().toList());
@@ -58,7 +59,6 @@ public class Day11 extends Day2023 {
   }
 
   private void readUniverse(List<String> input) {
-
     galaxies = new ArrayList<>();
     String[][] data = input.stream().map(line -> line.split("")).toArray(String[][]::new);
     for (int row = 0; row < data.length; row++) {
@@ -68,19 +68,18 @@ public class Day11 extends Day2023 {
         }
       }
     }
-
     emptyRows = LongStream.range(0, input.size())
         .filter(row -> galaxies.stream().noneMatch(g -> g.row == row))
         .boxed()
         .sorted(Comparator.reverseOrder())
         .toList();
-
     emptyCols = LongStream.range(0, input.get(0).length())
         .filter(col -> galaxies.stream().noneMatch(g -> g.col == col))
         .boxed()
         .sorted(Comparator.reverseOrder())
         .toList();
   }
+
   private List<Galaxy> expandUniverse(long factor) {
     return galaxies.stream()
         .map(g -> new Galaxy(
