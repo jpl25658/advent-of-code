@@ -19,6 +19,10 @@ Java solutions for [Advent of Code 2023](https://adventofcode.com/2023).
 - [Day11](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day11.java) ⭐⭐ [Cosmic Expansion](https://adventofcode.com/2023/day/11)
 - [Day12](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day12.java) ⭐⭐ [Hot Springs](https://adventofcode.com/2023/day/12)
 - [Day13](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day13.java) ⭐⭐ [Point of Incidence](https://adventofcode.com/2023/day/13)
-- Day14 [Parabolic 
+- [Day14](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day14.java) ⭐ [Parabolic 
   Reflector Dish](https://adventofcode.com/2023/day/14)
-- [Day15](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day14.java) ⭐⭐ [Lens Library](https://adventofcode.com/2023/day/15)
+- [Day15](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day15.java) ⭐⭐ [Lens Library](https://adventofcode.com/2023/day/15)
+- [Day16](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day16.java) ⭐⭐ [The Floor Will 
+  Be Lava](https://adventofcode.com/2023/day/16)
+
+
