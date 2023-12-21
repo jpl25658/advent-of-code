@@ -24,5 +24,6 @@ Java solutions for [Advent of Code 2023](https://adventofcode.com/2023).
 - [Day15](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day15.java) ⭐⭐ [Lens Library](https://adventofcode.com/2023/day/15)
 - [Day16](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day16.java) ⭐⭐ [The Floor Will 
   Be Lava](https://adventofcode.com/2023/day/16)
+- [Day17](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day17.java) ⭐⭐ [Clumsy Crucible](https://adventofcode.com/2023/day/17)
 
 
