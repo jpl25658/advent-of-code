@@ -26,5 +26,6 @@ Java solutions for [Advent of Code 2023](https://adventofcode.com/2023).
   Be Lava](https://adventofcode.com/2023/day/16)
 - [Day17](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day17.java) ⭐⭐ [Clumsy Crucible](https://adventofcode.com/2023/day/17)
 - [Day18](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day18.java) ⭐⭐ [Lavaduct Lagoon](https://adventofcode.com/2023/day/18)
+- [Day19](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year23/days/Day19.java) ⭐⭐ [Aplenty](https://adventofcode.com/2023/day/19)
 
 
