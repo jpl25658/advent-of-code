@@ -4,6 +4,9 @@
 
 Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).º
 
+### Days
+- [Day1](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day1.java) ⭐⭐ [Historian Hysteria](https://adventofcode.com/2024/day/1)
+
 ---
 
 ## 2023
