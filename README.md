@@ -5,6 +5,7 @@
 Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).º
 
 ### Days
+- [Day4](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day4.java) ⭐⭐ [Ceres Search](https://adventofcode.com/2024/day/4)
 - [Day3](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day3.java) ⭐⭐ [Mull It Over](https://adventofcode.com/2024/day/3)
 - [Day2](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day2.java) ⭐⭐ [Red-Nosed Reports](https://adventofcode.com/2024/day/2)
 - [Day1](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day1.java) ⭐⭐ [Historian Hysteria](https://adventofcode.com/2024/day/1)
