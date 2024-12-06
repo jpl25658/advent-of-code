@@ -2,9 +2,14 @@
 
 ## 2024
 
-Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).º
+Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 
 ### Days
+
+- [Day6](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day6.java)
+  ⭐⭐ [Guard Gallivant](https://adventofcode.com/2024/day/6)
+- [Day5](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day5.java)
+  ⭐⭐ [Print Queue](https://adventofcode.com/2024/day/5)
 - [Day4](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day4.java) ⭐⭐ [Ceres Search](https://adventofcode.com/2024/day/4)
 - [Day3](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day3.java) ⭐⭐ [Mull It Over](https://adventofcode.com/2024/day/3)
 - [Day2](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day2.java) ⭐⭐ [Red-Nosed Reports](https://adventofcode.com/2024/day/2)
