@@ -6,6 +6,8 @@ Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 
 ### Days
 
+- [Day7](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day7.java)
+  ⭐⭐ [Bridge Repair](https://adventofcode.com/2024/day/7)
 - [Day6](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day6.java)
   ⭐⭐ [Guard Gallivant](https://adventofcode.com/2024/day/6)
 - [Day5](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day5.java)
