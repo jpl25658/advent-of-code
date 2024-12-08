@@ -6,6 +6,14 @@ public record Coord(int row, int col) {
     return new Coord(row + other.row, col + other.col);
   }
 
+  public Coord sub(Coord other) {
+    return new Coord(row - other.row, col - other.col);
+  }
+
+  public Coord inverse() {
+    return new Coord(-row, -col);
+  }
+
   public static Coord N = new Coord(-1, 0);
   public static Coord S = new Coord(1, 0);
   public static Coord E = new Coord(0, 1);
