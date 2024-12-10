@@ -2,10 +2,8 @@ package org.jpl.advent.year24.days;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeSet;
 import java.util.stream.LongStream;
 import org.jpl.advent.common.Pair;
@@ -20,8 +18,7 @@ public class Day9 extends Day2024 {
     new Day9().printParts();
   }
 
-  /* Part 1 */
-
+  //<editor-fold desc="Part 1">
   @Override
   public Object part1() {
     var disk = parseInput();
@@ -64,10 +61,9 @@ public class Day9 extends Day2024 {
     }
     return disk.stream().mapToInt(Integer::intValue).toArray();
   }
+  //</editor-fold>
 
-
-  /* Part 2 */
-
+  //<editor-fold desc="Part 2">
   @Override
   public Object part2() {
     var input = parseInput2();
@@ -91,58 +87,48 @@ public class Day9 extends Day2024 {
   private record File(long fileId, Block block) {
   }
 
-  private Pair<Map<Long, TreeSet<Block>>, LinkedList<File>> parseInput2() {
-    var digits = dayDigits();
+  private Pair<TreeSet<Block>, LinkedList<File>> parseInput2() {
     LinkedList<File> files = new LinkedList<>();
-    Map<Long, TreeSet<Block>> emptyBlocks = new HashMap<>();
+    TreeSet<Block> emptyBlocks = new TreeSet<>();
     long fileId = 0L;
     long start = 0L;
     boolean bFile = true;
-    for (long size : digits) {
-      if (size != 0) {
-        var block = new Block(start, size);
-        if (bFile) {
-          files.addLast(new File(fileId++, block));
-        } else {
-          addEmptyBlock(emptyBlocks, block);
+    for (long size : dayDigits()) {
+      var block = new Block(start, size);
+      start += size;
+      if (bFile) {
+        files.addLast(new File(fileId++, block));
+      } else {
+        if (size != 0) {
+          emptyBlocks.add(block);
         }
       }
-      start += (int) size;
       bFile = !bFile;
     }
     return new Pair<>(emptyBlocks, files);
   }
 
-  private void addEmptyBlock(Map<Long, TreeSet<Block>> emptyBlocks, Block block) {
-    var blocksOfSize = emptyBlocks.getOrDefault(block.size(), new TreeSet<>());
-    blocksOfSize.add(block);
-    emptyBlocks.put(block.size(), blocksOfSize);
-  }
+  private File moveFile(File file, TreeSet<Block> emptyBlocks) {
+    var block = emptyBlocks.stream()
+        .filter(b -> b.size() >= file.block().size())
+        .filter(b -> b.start() < file.block().start())
+        .findFirst();
 
-  private File moveFile(File file, Map<Long, TreeSet<Block>> emptyBlocks) {
-    var entry = emptyBlocks.entrySet().stream()
-        .filter(e -> e.getKey() >= file.block().size())
-        .filter(e -> !e.getValue().isEmpty())
-        .filter(e -> e.getValue().first().start() < file.block().start())
-        .min(Map.Entry.comparingByKey());
-
-    if (entry.isEmpty()) {
+    if (block.isEmpty()) {
       return file;
     }
 
-    var blocks = entry.get().getValue();
-    var emptyBlock = blocks.pollFirst();
-    // if there is spare empty space, keep it
-    if (emptyBlock.size() > file.block().size()) {
-      var newEmptyBlock = new Block(emptyBlock.start() + file.block().size(), emptyBlock.size() - file.block().size());
-      addEmptyBlock(emptyBlocks, newEmptyBlock);
+    var empty = block.get();
+    emptyBlocks.remove(empty);
+    if (empty.size() > file.block().size()) {
+      emptyBlocks.add(new Block(empty.start() + file.block().size(), empty.size() - file.block().size()));
     }
-    // move file to emptyBlock
-    return new File(file.fileId(), new Block(emptyBlock.start(), file.block().size()));
+    return new File(file.fileId(), new Block(empty.start(), file.block().size()));
   }
 
   private long calcChecksum(File file) {
     return file.fileId() * LongStream.range(file.block().start(), file.block().start() + file.block().size()).sum();
   }
+  //</editor-fold>
 
 }
