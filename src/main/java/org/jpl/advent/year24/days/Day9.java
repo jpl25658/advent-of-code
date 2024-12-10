@@ -96,7 +96,7 @@ public class Day9 extends Day2024 {
       var block = new Block(start, size);
       start += size;
       if (bFile) {
-        files.addLast(new File(fileId++, block));
+        files.add(new File(fileId++, block));
       } else {
         if (size != 0) {
           emptyBlocks.add(block);
