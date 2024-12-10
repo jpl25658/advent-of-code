@@ -2,7 +2,6 @@ package org.jpl.advent.year24.days;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.LongStream;
@@ -87,8 +86,8 @@ public class Day9 extends Day2024 {
   private record File(long fileId, Block block) {
   }
 
-  private Pair<TreeSet<Block>, LinkedList<File>> parseInput2() {
-    LinkedList<File> files = new LinkedList<>();
+  private Pair<TreeSet<Block>, List<File>> parseInput2() {
+    List<File> files = new ArrayList<>();
     TreeSet<Block> emptyBlocks = new TreeSet<>();
     long fileId = 0L;
     long start = 0L;
