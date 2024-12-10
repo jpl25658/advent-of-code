@@ -6,6 +6,8 @@ Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 
 ### Days
 
+- [Day9](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day9.java)
+  ⭐ [Disk Fragmenter](https://adventofcode.com/2024/day/9)
 - [Day8](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day8.java)
   ⭐⭐ [Resonant Collinearity](https://adventofcode.com/2024/day/8)
 - [Day7](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day7.java)
