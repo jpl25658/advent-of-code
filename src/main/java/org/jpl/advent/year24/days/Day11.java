@@ -18,7 +18,7 @@ public class Day11 extends Day2024 {
   @Override
   public Object part1() {
     var stones = parseInput();
-    
+
     return stones.stream()
         .mapToLong(stone -> blinkStone(stone, 25))
         .sum();
@@ -33,19 +33,24 @@ public class Day11 extends Day2024 {
         .sum();
   }
 
+  private record StoneBlink(long stone, int blink) {
+  }
+
   private long blinkStone(long stone, int blinks) {
-    Map<Long, Map<Integer, Long>> memo = new HashMap<>();
+    Map<StoneBlink, Long> memo = new HashMap<>();
 
     return blinkStoneMemoized(stone, blinks, memo);
   }
 
-  private long blinkStoneMemoized(long stone, int blinks, Map<Long, Map<Integer, Long>> memo) {
+  private long blinkStoneMemoized(long stone, int blinks, Map<StoneBlink, Long> memo) {
     if (blinks == 0) {
       return 1L;
     }
 
-    if (memo.containsKey(stone) && memo.get(stone).containsKey(blinks)) {
-      return memo.get(stone).get(blinks);
+    StoneBlink actual = new StoneBlink(stone, blinks);
+
+    if (memo.containsKey(actual)) {
+      return memo.get(actual);
     }
 
     long result;
@@ -63,9 +68,7 @@ public class Day11 extends Day2024 {
         result = blinkStoneMemoized(stone * 2024L, blinks - 1, memo);
       }
     }
-    memo.putIfAbsent(stone, new HashMap<>());
-    memo.get(stone).put(blinks, result);
-
+    memo.put(actual, result);
     return result;
   }
 
