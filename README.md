@@ -6,6 +6,8 @@ Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 
 ### Days
 
+- [Day12](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day12.java)
+  ⭐ [Garden Groups](https://adventofcode.com/2024/day/12)
 - [Day11](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day11.java)
   ⭐⭐ [Plutonian Pebbles](https://adventofcode.com/2024/day/11)
 - [Day10](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day10.java)
