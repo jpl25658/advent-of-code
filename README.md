@@ -6,7 +6,9 @@ Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 
 ### Days
 
-- [Day13](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day13.java)
+- [Day14](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day14.java)
+  ⭐⭐ [Restroom Redoubt](https://adventofcode.com/2024/day/14)
+    - [Day13](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day13.java)
   ⭐⭐ [Claw Contraption](https://adventofcode.com/2024/day/13)
 - [Day12](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day12.java)
   ⭐ [Garden Groups](https://adventofcode.com/2024/day/12)
