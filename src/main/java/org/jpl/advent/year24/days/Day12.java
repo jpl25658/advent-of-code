@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 import org.jpl.advent.common.Coord;
 import org.jpl.advent.common.Grid;
+import org.jpl.advent.common.Pair;
 import org.jpl.advent.year24.Day2024;
 
 public class Day12 extends Day2024 {
@@ -32,11 +33,16 @@ public class Day12 extends Day2024 {
   @Override
   public Object part2() {
     var garden = parseInput();
+    List<Region> regions = calcRegions(garden);
 
-    return false;
+    return regions.stream()
+        .mapToLong(region -> region.plots().size() * calcSides(region, garden))
+        .sum();
   }
 
   private static final List<Coord> MOVES = List.of(Coord.N, Coord.S, Coord.E, Coord.W);
+  private static final List<Coord> HORIZONTAL = List.of(Coord.E, Coord.W);
+  private static final List<Coord> VERTICAL = List.of(Coord.N, Coord.S);
 
   private record Region(char flower, Set<Coord> plots) {
   }
@@ -90,6 +96,27 @@ public class Day12 extends Day2024 {
         .map(move -> garden.get(coord.add(move)))
         .filter(plot -> plot != flower)
         .count();
+  }
+
+  private long calcSides(Region region, Grid garden) {
+    Set<Pair<Coord, Coord>> visited = new HashSet<>();
+
+    var sides = 0;
+    for (var plot : region.plots()) {
+      for (var direction : MOVES) {
+        if (!visited.contains(new Pair<>(plot, direction)) && !region.plots().contains(plot.add(direction))) {
+          for (var next : HORIZONTAL.contains(direction) ? VERTICAL : HORIZONTAL) {
+            var actual = plot;
+            while (region.plots().contains(actual) && !region.plots().contains(actual.add(direction))) {
+              visited.add(new Pair<>(actual, direction));
+              actual = actual.add(next);
+            }
+          }
+          sides++;
+        }
+      }
+    }
+    return sides;
   }
 
 }
