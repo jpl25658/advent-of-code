@@ -1,5 +1,9 @@
 package org.jpl.advent.year24.days;
 
+import static org.jpl.advent.common.Coord.HORIZONTAL;
+import static org.jpl.advent.common.Coord.MOVES;
+import static org.jpl.advent.common.Coord.VERTICAL;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -39,10 +43,6 @@ public class Day12 extends Day2024 {
         .mapToLong(region -> region.plots().size() * calcSides(region, garden))
         .sum();
   }
-
-  private static final List<Coord> MOVES = List.of(Coord.N, Coord.S, Coord.E, Coord.W);
-  private static final List<Coord> HORIZONTAL = List.of(Coord.E, Coord.W);
-  private static final List<Coord> VERTICAL = List.of(Coord.N, Coord.S);
 
   private record Region(char flower, Set<Coord> plots) {
   }

@@ -1,7 +1,8 @@
 package org.jpl.advent.year24.days;
 
+import static org.jpl.advent.common.Coord.MOVES;
+
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.List;
@@ -44,7 +45,6 @@ public class Day10 extends Day2024 {
 
   private static final char START = '0';
   private static final char END = '9';
-  private static final Coord[] MOVES = {Coord.N, Coord.S, Coord.E, Coord.W};
 
   private List<Coord> findTrailheads(Grid grid) {
     return IntStream.range(0, grid.rowLength()).mapToObj(row ->
@@ -71,7 +71,7 @@ public class Day10 extends Day2024 {
         hikingTrails.add(actual.pos());
         rating++;
       } else {
-        Arrays.stream(MOVES)
+        MOVES.stream()
             .map(move -> actual.pos().add(move))
             .filter(coord -> grid.get(coord) == actual.height() + 1)
             .forEach(coord -> state.add(new State(grid.get(coord), coord)));

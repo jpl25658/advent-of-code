@@ -1,5 +1,8 @@
 package org.jpl.advent.common;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public record Grid(char[][] grid, char empty, char outGrid) {
 
   public static final char EMPTY = '.';
@@ -55,4 +58,9 @@ public record Grid(char[][] grid, char empty, char outGrid) {
     }
   }
 
+  public String print() {
+    return Arrays.stream(grid)
+        .map(String::new)
+        .collect(Collectors.joining(System.lineSeparator()));
+  }
 }
