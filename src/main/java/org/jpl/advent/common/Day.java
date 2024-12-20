@@ -1,8 +1,5 @@
 package org.jpl.advent.common;
 
-import org.jpl.advent.network.FetchInput;
-import org.jpl.advent.network.Submit;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,6 +8,8 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
+import org.jpl.advent.network.FetchInput;
+import org.jpl.advent.network.Submit;
 
 public abstract class Day {
   public static final String DEFAULT_DELIMITER = "\n";
@@ -102,7 +101,11 @@ public abstract class Day {
   }
 
   protected Stream<String> dayStream(String delimiter) {
-    return Arrays.stream(day().split(delimiter));
+    return dayStream(day(), delimiter);
+  }
+
+  protected Stream<String> dayStream(String input, String delimiter) {
+    return Arrays.stream(input.split(delimiter));
   }
 
   protected IntStream dayIntStream() {
@@ -147,6 +150,10 @@ public abstract class Day {
 
   protected char[][] dayGrid(String delimiter) {
     return dayStream(delimiter).map(String::toCharArray).toArray(char[][]::new);
+  }
+
+  protected char[][] dayGrid(String input, String delimiter) {
+    return dayStream(input, delimiter).map(String::toCharArray).toArray(char[][]::new);
   }
 
   public void downloadIfNotDownloaded() {
