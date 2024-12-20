@@ -7,7 +7,7 @@ Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 ### Days
 
 - [Day20](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day20.java)
-  ⭐ [Race Condition](https://adventofcode.com/2024/day/20)
+  ⭐⭐ [Race Condition](https://adventofcode.com/2024/day/20)
 - [Day15](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day15.java)
   ⭐ [Warehouse Woes](https://adventofcode.com/2024/day/15)
 - [Day14](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year24/days/Day14.java)

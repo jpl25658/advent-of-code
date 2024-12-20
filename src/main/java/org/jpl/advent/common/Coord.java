@@ -24,6 +24,10 @@ public record Coord(int row, int col) {
     return new Coord((row + size.row()) % size.row(), (col + size.col()) % size.col());
   }
 
+  public int manhattan(Coord other) {
+    return Math.abs(row - other.row()) + Math.abs(col - other.col());
+  }
+
   public static Coord N = new Coord(-1, 0);
   public static Coord S = new Coord(1, 0);
   public static Coord E = new Coord(0, 1);

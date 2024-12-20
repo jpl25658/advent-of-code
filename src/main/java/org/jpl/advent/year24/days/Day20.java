@@ -48,6 +48,52 @@ public class Day20 extends Day2024 {
     return listing + "\n\nAt least 100 saving: %d".formatted(atLeastHundred);
   }
 
+  @Override
+  public Object part2() {
+    var grid = parseInput();
+    var start = findCoord(grid, START);
+    var end = findCoord(grid, END);
+
+    var visited = traverseMaze(grid, start, end);
+    var ordered = new TreeMap<>(visited.entrySet().stream().collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey)));
+
+    var savings = ordered.entrySet().stream()
+        .flatMap(entry -> findCheats20(entry.getKey(), entry.getValue(), grid, ordered))
+        .map(Cheat::saving)
+        .collect(Collectors.groupingBy(Function.identity(), TreeMap::new, Collectors.counting()));
+
+    var listing = savings.entrySet().stream()
+        .filter(entry -> entry.getKey() >= 50)
+        .map(entry -> printSaving(entry.getKey(), entry.getValue()))
+        .collect(Collectors.joining("\n"));
+
+    var atLeastHundred = savings.entrySet().stream()
+        .filter(entry -> entry.getKey() >= 100)
+        .mapToLong(Map.Entry::getValue)
+        .sum();
+
+    return listing + "\n\nAt least 100 saving: %d".formatted(atLeastHundred);
+  }
+
+  private final char WALL = '#';
+  private final char START = 'S';
+  private final char END = 'E';
+
+  private Grid parseInput() {
+    return new Grid(dayGrid(), EMPTY, WALL);
+  }
+
+  private Coord findCoord(Grid grid, char value) {
+    for (var r = 0; r < grid.rowLength(); r++) {
+      for (var c = 0; c < grid.colLength(); c++) {
+        if (grid.get(r, c) == value) {
+          return new Coord(r, c);
+        }
+      }
+    }
+    throw new IllegalStateException("Robot not found");
+  }
+
   private Map<Coord, Integer> traverseMaze(Grid grid, Coord start, Coord end) {
     Map<Coord, Integer> visited = new HashMap<>();
     var picoSeconds = 0;
@@ -89,32 +135,12 @@ public class Day20 extends Day2024 {
     return "There are %d cheats that save %d picoseconds.".formatted(numCheats, savedPicoseconds);
   }
 
-
-  @Override
-  public Object part2() {
-    var input = parseInput();
-
-    return false;
+  private Stream<Cheat> findCheats20(int picoSecond, Coord actual, Grid grid, Map<Integer, Coord> ordered) {
+    return ordered.entrySet().stream()
+        .filter(e -> e.getKey() > picoSecond + 2)
+        .filter(e -> actual.manhattan(e.getValue()) <= 20)
+        .map(e -> new Cheat(actual, e.getValue(), e.getKey() - picoSecond - actual.manhattan(e.getValue())))
+        .filter(cheat -> cheat.saving() > 0);
   }
-
-  private final char WALL = '#';
-  private final char START = 'S';
-  private final char END = 'E';
-
-  private Grid parseInput() {
-    return new Grid(dayGrid(), EMPTY, WALL);
-  }
-
-  private Coord findCoord(Grid grid, char value) {
-    for (var r = 0; r < grid.rowLength(); r++) {
-      for (var c = 0; c < grid.colLength(); c++) {
-        if (grid.get(r, c) == value) {
-          return new Coord(r, c);
-        }
-      }
-    }
-    throw new IllegalStateException("Robot not found");
-  }
-
 
 }
