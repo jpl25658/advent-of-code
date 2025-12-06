@@ -45,7 +45,7 @@ public record Grid(char[][] grid, char empty, char outGrid) {
   }
 
   public char get(int row, int col) {
-    return isValid(row, col) ? grid[row][col] : OUT_GRID;
+    return isValid(row, col) ? grid[row][col] : outGrid();
   }
 
   public void set(Coord coord, char value) {

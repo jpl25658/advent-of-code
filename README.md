@@ -1,5 +1,16 @@
 # Advent of Code
 
+## 2025
+
+- [Day6](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day6.java) ⭐⭐ [Trash Compactor](https://adventofcode.com/2025/day/6)
+- [Day5](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day5.java) ⭐⭐ [Cafetria](https://adventofcode.com/2025/day/5)
+- [Day4](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day4.java) ⭐⭐ [Printing Department](https://adventofcode.com/2025/day/4)
+- [Day3](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day3.java) ⭐⭐ [Lobby](https://adventofcode.com/2025/day/3)
+- [Day2](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day2.java) ⭐⭐ [Gift Shop](https://adventofcode.com/2025/day/2)
+- [Day1](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day1.java) ⭐⭐ [Secret Entrance](https://adventofcode.com/2025/day/1)
+
+---
+
 ## 2024
 
 Java solutions for [Advent of Code 2024](https://adventofcode.com/2024).
