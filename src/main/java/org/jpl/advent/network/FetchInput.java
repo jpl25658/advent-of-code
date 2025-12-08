@@ -29,7 +29,7 @@ public class FetchInput {
   }
 
   public static void main(String[] args) {
-    new FetchInput().retrieveDay("7", "2025");
+    new FetchInput().retrieveDay("8", "2025");
   }
 
   private void retrieveDay(String day, String year) {

@@ -2,6 +2,7 @@
 
 ## 2025
 
+- [Day8](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day8.java) ⭐⭐ [Plauground](https://adventofcode.com/2025/day/8)
 - [Day7](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day7.java) ⭐⭐ [Laboratories](https://adventofcode.com/2025/day/7)
 - [Day6](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day6.java) ⭐⭐ [Trash Compactor](https://adventofcode.com/2025/day/6)
 - [Day5](https://github.com/jpl25658/advent-of-code/blob/main/src/main/java/org/jpl/advent/year25/days/Day5.java) ⭐⭐ [Cafetria](https://adventofcode.com/2025/day/5)

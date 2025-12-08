@@ -14,6 +14,6 @@ class Day7Test {
 
     @Test
     void testPart2() {
-        assertEquals("40", day.setExample(2).part2().toString());
+        assertEquals("40", day.setExample(1).part2().toString());
     }
 }
